@@ -7,3 +7,5 @@ git add filename
 git commit - m "update"
 git push
 git pull
+
+Supriya Loves Kavita
