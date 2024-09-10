@@ -9,3 +9,4 @@ git push
 git pull
 
 Supriya Loves Kavita
+you can use this software "vscode" also to manage git commands directly
