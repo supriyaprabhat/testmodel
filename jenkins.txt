@@ -1,9 +1,12 @@
 pipeline {
     agent any // Jenkins will run the pipeline on any available agent
+
+    enviroment{ PATH="C://Program Files" }
     
     stages {
-        stage('Build') {
+        stage('ert_main.c') {
             steps {
+                    'run compiler'
                 echo 'Building the project...' 
                 // Insert build commands, e.g., 'mvn clean install' for a Maven project
             }
