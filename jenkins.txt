@@ -1,0 +1,39 @@
+pipeline {
+    agent any // Jenkins will run the pipeline on any available agent
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the project...' 
+                // Insert build commands, e.g., 'mvn clean install' for a Maven project
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo 'Running tests...' 
+                // Insert testing commands, e.g., 'mvn test' or 'npm test'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'Deploying to the environment...' 
+                // Insert deployment commands, e.g., 'scp', 'docker push', etc.
+            }
+        }
+    }
+    
+    post {
+        always {
+            echo 'Cleaning up workspace...'
+            cleanWs() // Optional: Clean up the workspace after the job completes
+        }
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
+}
